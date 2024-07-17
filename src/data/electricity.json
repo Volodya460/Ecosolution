@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "img": "/pictures/zakhidniy.jpg",
+    "img2x": "/cases/beautiful_view_wind_turbines@2x.jpg",
+    "location": "Lviv Region, Radekhiv town",
+    "name": "Private Enterprise “ZAKHIDNYI BUH”",
+    "type": "Wind Power for auto field irrigation",
+    "date": "July 2023"
+  },
+  {
+    "id": 2,
+    "img": "/pictures/Bosch (1).jpg",
+    "img2x": "/cases/solar_Panel_view@2x.jpg",
+    "location": "Zhytomyr city",
+    "name": "Private Enterprise “Bosch”",
+    "type": "Solar Panels for industrial use",
+    "date": "November 2023"
+  },
+  {
+    "id": 3,
+    "img": "/pictures/Biotech (1).jpg",
+    "img2x": "/cases/factory_View@2x.jpg",
+    "location": "Rivne city",
+    "name": "Private Enterprise “Biotech”",
+    "type": "Thermal modules",
+    "date": "October 2023"
+  },
+  {
+    "id": 4,
+    "img": "/pictures/HealthyFarm (1).jpg",
+    "img2x": "/cases/landscape_with_windmills@2x.jpg",
+    "location": "Kherson city",
+    "name": "Private Enterprise “HealthyFarm”",
+    "type": "Wind power",
+    "date": "September 2021"
+  },
+  {
+    "id": 5,
+    "img": "/pictures/Biotech (2).jpg",
+    "img2x": "/cases/nuclear_power_plant_center_spain@2x.jpg",
+    "location": "Zaporizhia city",
+    "name": "Private Enterprise “Biotech”",
+    "type": "Mini nuclear stations",
+    "date": "May 2021"
+  }
+]
