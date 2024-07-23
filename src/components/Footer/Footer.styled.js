@@ -83,6 +83,23 @@ export const SocialList = styled.ul`
   grid-column: span 2;
   grid-row: 2/3;
 
+  li:first-child {
+    a {
+      &:hover svg {
+        fill: ${({ theme }) => theme.color.whiteGreen};
+        stroke: ${({ theme }) => theme.color.whiteGreen};
+      }
+      &:focus svg {
+        fill: ${({ theme }) => theme.color.whiteGreen};
+        stroke: ${({ theme }) => theme.color.whiteGreen};
+      }
+    }
+
+    svg {
+      fill: black;
+    }
+  }
+
   a {
     display: flex;
     align-items: center;

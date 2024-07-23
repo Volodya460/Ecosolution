@@ -1,5 +1,28 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-scroll";
+
+const slideDown = keyframes`
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const slideUp = keyframes`
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+`;
+
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -15,6 +38,10 @@ export const Overlay = styled.div`
 
 export const ModalWindow = styled.div`
   position: absolute;
+
+  animation: ${(props) => (props.$isClosing ? slideUp : slideDown)} 0.3s
+    ease-out;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -88,14 +115,40 @@ export const SocialBox = styled.ul`
   align-items: center;
   gap: 8px;
 
+  li:first-child {
+    a {
+      &:hover svg {
+        fill: ${({ theme }) => theme.color.whiteGreen};
+        stroke: ${({ theme }) => theme.color.whiteGreen};
+      }
+      &:focus svg {
+        fill: ${({ theme }) => theme.color.whiteGreen};
+        stroke: ${({ theme }) => theme.color.whiteGreen};
+      }
+    }
+
+    svg {
+      fill: white;
+      transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
   a {
     display: flex;
     align-items: center;
+    &:hover svg {
+      stroke: ${({ theme }) => theme.color.whiteGreen};
+    }
+    &:focus svg {
+      stroke: ${({ theme }) => theme.color.whiteGreen};
+    }
   }
 
   svg {
     fill: none;
     stroke: white;
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 

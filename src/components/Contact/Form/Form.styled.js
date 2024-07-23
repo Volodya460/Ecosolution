@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Form } from "formik";
+import { Form, Field } from "formik";
 
 export const FormBox = styled(Form)`
   display: flex;
@@ -39,21 +39,6 @@ export const FormBox = styled(Form)`
     }
   }
 
-  input {
-    font-size: 18px;
-    color: #173d33;
-    padding-bottom: 8px;
-    margin-top: 8px;
-    border: none;
-    border-bottom: ${({ errors }) =>
-      errors ? "1px solid red" : "1px solid #97d28b"};
-
-    background-color: ${({ theme }) => theme.background.grey};
-
-    &::placeholder {
-      color: #bdbdbd;
-    }
-  }
   textarea {
     width: 100%;
     height: 147px;
@@ -104,5 +89,20 @@ export const FormBox = styled(Form)`
       padding: 8px;
       margin-left: 12px;
     }
+  }
+`;
+
+export const FormInput = styled(Field)`
+  font-size: 18px;
+  color: #173d33;
+  padding-bottom: 8px;
+  margin-top: 8px;
+  border: none;
+  border-bottom: 1px solid ${(props) => (props.errors ? "red" : "#97d28b")};
+
+  background-color: ${({ theme }) => theme.background.grey};
+
+  &::placeholder {
+    color: #bdbdbd;
   }
 `;

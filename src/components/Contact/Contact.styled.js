@@ -65,7 +65,8 @@ export const ContactBox = styled.div`
   svg {
     stroke: black;
     fill: none;
-    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 
@@ -161,6 +162,24 @@ export const SocialBox = styled.div`
       margin-top: 16px;
     }
   }
+
+  li:first-child {
+    a {
+      &:hover svg {
+        fill: ${({ theme }) => theme.color.whiteGreen};
+        stroke: ${({ theme }) => theme.color.whiteGreen};
+      }
+      &:focus svg {
+        fill: ${({ theme }) => theme.color.whiteGreen};
+        stroke: ${({ theme }) => theme.color.whiteGreen};
+      }
+    }
+
+    svg {
+      fill: black;
+    }
+  }
+
   li {
     padding: 12px;
 

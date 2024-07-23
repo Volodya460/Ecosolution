@@ -1,4 +1,4 @@
-import { FormBox } from "./Form.styled";
+import { FormBox, FormInput } from "./Form.styled";
 import Icons from "../../../images/sprite.svg";
 import { Formik, Field } from "formik";
 
@@ -27,7 +27,7 @@ export const Form = () => {
           <label>
             <span>* Full name:</span>
 
-            <Field
+            <FormInput
               type="text"
               name="name"
               placeholder="John Rosie"
@@ -36,10 +36,9 @@ export const Form = () => {
 
             <FormError name="name" />
           </label>
-
           <label>
             <span> * E-mail:</span>
-            <Field
+            <FormInput
               type="email"
               name="email"
               placeholder="johnrosie@gmail.com"
@@ -47,10 +46,9 @@ export const Form = () => {
             />
             <FormError name="email" />
           </label>
-
           <label>
             <span> * Phone:</span>
-            <Field
+            <FormInput
               type="number"
               name="phone"
               placeholder="380961234567"
@@ -58,7 +56,6 @@ export const Form = () => {
             />
             <FormError name="phone" />
           </label>
-
           <label>
             <span> Message:</span>
             <Field
@@ -68,7 +65,6 @@ export const Form = () => {
               placeholder="My message...."
             />
           </label>
-
           <button type="submit">
             Send{" "}
             <span>

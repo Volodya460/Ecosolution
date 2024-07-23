@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import { createPortal } from "react-dom";
@@ -15,33 +15,48 @@ import Icons from "../../images/sprite.svg";
 const modalRoot = document.querySelector("#modal-root");
 
 export const Modal = ({ closeModal }) => {
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      closeModal();
+      setIsClosing(false);
+    }, 300);
+  };
+
   useEffect(() => {
-    const closeEscModal = (e) => {
-      if (e.code === "Escape") {
-        closeModal();
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsClosing(true);
+        setTimeout(() => {
+          closeModal();
+          setIsClosing(false);
+        }, 300);
       }
     };
 
-    window.addEventListener("keydown", closeEscModal);
+    window.addEventListener("keydown", handleKeyDown);
+
     return () => {
-      window.removeEventListener("keydown", closeEscModal);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [closeModal]);
 
   const handleBackDropClick = (e) => {
     if (e.currentTarget === e.target) {
-      closeModal();
+      handleClose();
     }
   };
 
   return createPortal(
     <div>
       <Overlay onClick={handleBackDropClick}>
-        <ModalWindow>
+        <ModalWindow $isClosing={isClosing}>
           <div>
             {" "}
             <ButtonDiv>
-              <button type="button" onClick={closeModal}>
+              <button type="button" onClick={handleClose}>
                 <svg
                   width="10px"
                   height="10px"
